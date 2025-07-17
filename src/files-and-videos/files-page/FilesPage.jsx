@@ -91,7 +91,7 @@ const FilesPage = ({
     usageErrorMessages: errorMessages.usageMetrics,
     fileType: 'file',
   };
-  const maxFileSize = 20 * 1048576;
+  const maxFileSize = 2048 * 1048576;
 
   const activeColumn = {
     id: 'activeStatus',
