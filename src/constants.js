@@ -1,3 +1,4 @@
+import { getConfig } from '@edx/frontend-platform';
 export const DATE_FORMAT = 'MM/dd/yyyy';
 export const TIME_FORMAT = 'HH:mm';
 export const DATE_TIME_FORMAT = 'YYYY-MM-DDTHH:mm:ss\\Z';
@@ -52,7 +53,22 @@ export const DECODED_ROUTES = {
   ],
 };
 
-export const UPLOAD_FILE_MAX_SIZE = 20 * 1024 * 1024; // 20MiB
+/**
+ * Config override for the max asset upload size
+ * uses default value unless an override is configured
+ */
+const DEFAULT_MAX_UPLOAD_SIZE_MB = 20;
+const BYTES_IN_MB = 1024 * 1024;
+export const getMaxUploadFileSize = () => {
+  const config = getConfig();
+  const valueInMb = config.MAX_FILE_UPLOAD_SIZE_IN_MB;
+  const parsed = parseInt(valueInMb, 10);
+  if (valueInMb && isNaN(parsed)) {
+    console.warn('Invalid MAX_FILE_UPLOAD_SIZE_IN_MB, falling back to default.');
+  }
+  const sizeInMb = (!valueInMb || isNaN(parsed)) ? DEFAULT_MAX_UPLOAD_SIZE_MB : parsed;
+  return sizeInMb * BYTES_IN_MB;
+};
 
 export const COURSE_BLOCK_NAMES = ({
   chapter: { id: 'chapter', name: 'Section' },
