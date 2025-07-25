@@ -33,7 +33,7 @@ import FileThumbnail from './FileThumbnail';
 import FileInfoModalSidebar from './FileInfoModalSidebar';
 import FileValidationModal from './FileValidationModal';
 import './FilesPage.scss';
-
+import { getMaxUploadFileSize } from '../../constants';
 const FilesPage = ({
   courseId,
 }) => {
@@ -90,7 +90,7 @@ const FilesPage = ({
     usageErrorMessages: errorMessages.usageMetrics,
     fileType: 'file',
   };
-  import { getMaxUploadFileSize } from '../../constants';
+
   const maxFileSize = getMaxUploadFileSize();
   
   const activeColumn = {
