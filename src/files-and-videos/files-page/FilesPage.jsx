@@ -90,8 +90,9 @@ const FilesPage = ({
     usageErrorMessages: errorMessages.usageMetrics,
     fileType: 'file',
   };
-  const maxFileSize = 2048 * 1048576;
-
+  import { getMaxUploadFileSize } from '../../constants';
+  const maxFileSize = getMaxUploadFileSize();
+  
   const activeColumn = {
     id: 'activeStatus',
     Header: intl.formatMessage(messages.fileActiveColumn),
