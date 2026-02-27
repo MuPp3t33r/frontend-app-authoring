@@ -11,17 +11,14 @@ import { reducer as modelsReducer } from './generic/model-store';
 import { reducer as discussionsReducer } from './pages-and-resources/discussions/data/slice';
 import { reducer as pagesAndResourcesReducer } from './pages-and-resources/data/slice';
 import { reducer as customPagesReducer } from './custom-pages/data/slice';
-import { reducer as advancedSettingsReducer } from './advanced-settings/data/slice';
 import { reducer as studioHomeReducer } from './studio-home/data/slice';
 import { reducer as scheduleAndDetailsReducer } from './schedule-and-details/data/slice';
 import { reducer as filesReducer } from './files-and-videos/files-page/data/slice';
-import { reducer as courseTeamReducer } from './course-team/data/slice';
 import { reducer as CourseUpdatesReducer } from './course-updates/data/slice';
 import { reducer as processingNotificationReducer } from './generic/processing-notification/data/slice';
 import { reducer as courseExportReducer } from './export-page/data/slice';
 import { reducer as courseOptimizerReducer } from './optimizer-page/data/slice';
 import { reducer as genericReducer } from './generic/data/slice';
-import { reducer as courseImportReducer } from './import-page/data/slice';
 import { reducer as videosReducer } from './files-and-videos/videos-page/data/slice';
 import { reducer as courseOutlineReducer } from './course-outline/data/slice';
 import { reducer as courseUnitReducer } from './course-unit/data/slice';
@@ -41,17 +38,14 @@ export interface DeprecatedReduxState {
   assets: Record<string, any>;
   pagesAndResources: Record<string, any>;
   scheduleAndDetails: Record<string, any>;
-  advancedSettings: Record<string, any>;
   studioHome: InferState<typeof studioHomeReducer>;
   models: Record<string, any>;
   live: Record<string, any>;
-  courseTeam: Record<string, any>;
   courseUpdates: Record<string, any>;
   processingNotification: Record<string, any>;
   courseExport: Record<string, any>;
   courseOptimizer: Record<string, any>;
   generic: Record<string, any>;
-  courseImport: Record<string, any>;
   videos: Record<string, any>;
   courseOutline: Record<string, any>;
   courseUnit: Record<string, any>;
@@ -75,17 +69,14 @@ export default function initializeStore(preloadedState: Partial<DeprecatedReduxS
       assets: filesReducer,
       pagesAndResources: pagesAndResourcesReducer,
       scheduleAndDetails: scheduleAndDetailsReducer,
-      advancedSettings: advancedSettingsReducer,
       studioHome: studioHomeReducer,
       models: modelsReducer,
       live: liveReducer,
-      courseTeam: courseTeamReducer,
       courseUpdates: CourseUpdatesReducer,
       processingNotification: processingNotificationReducer,
       courseExport: courseExportReducer,
       courseOptimizer: courseOptimizerReducer,
       generic: genericReducer,
-      courseImport: courseImportReducer,
       videos: videosReducer,
       courseOutline: courseOutlineReducer,
       courseUnit: courseUnitReducer,
