@@ -20,6 +20,7 @@
     "start:with-theme": "paragon install-theme && npm start && npm install",
     "dev": "PUBLIC_PATH=/authoring/ MFE_CONFIG_API_URL='http://localhost:8000/api/mfe_config/v1' fedx-scripts webpack-dev-server --progress --host apps.local.openedx.io",
     "test": "TZ=UTC fedx-scripts jest --coverage --passWithNoTests",
+    "test:dev": "TZ=UTC fedx-scripts jest --coverage --watch --passWithNoTests",
     "test:ci": "TZ=UTC fedx-scripts jest --silent --coverage --passWithNoTests",
     "types": "tsc --noEmit"
   },
@@ -66,7 +67,8 @@
     "@openedx/paragon": "^23.5.0",
     "@redux-devtools/extension": "^3.3.0",
     "@reduxjs/toolkit": "2.11.2",
-    "@tanstack/react-query": "5.90.21",
+    "@tanstack/react-query": "5.95.2",
+    "@tanstack/react-table": "^8.21.3",
     "@tinymce/tinymce-react": "^6.0.0",
     "classnames": "2.5.1",
     "codemirror": "^6.0.0",
@@ -119,7 +121,7 @@
     "jest-canvas-mock": "^2.5.2",
     "jest-expect-message": "^1.1.3",
     "oxlint": "^1.42.0",
-    "oxlint-tsgolint": "^0.16.0",
+    "oxlint-tsgolint": "^0.17.0",
     "react-test-renderer": "^18.3.1",
     "redux-mock-store": "^1.5.4"
   }
