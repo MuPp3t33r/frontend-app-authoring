@@ -17,7 +17,8 @@ import {
   setSectionOrderList,
   setVideoSharingOption,
   setCourseItemOrderList,
-  dismissNotification, createDiscussionsTopics,
+  dismissNotification,
+  createDiscussionsTopics,
 } from './api';
 import {
   fetchOutlineIndexSuccess,
@@ -89,7 +90,7 @@ export function syncDiscussionsTopics(courseId: string) {
     try {
       await createDiscussionsTopics(courseId);
     } catch (error) {
-      logError(error);
+      logError(error as string | Error);
     }
   };
 }
@@ -104,7 +105,10 @@ export function fetchCourseLaunchQuery({
     dispatch(updateCourseLaunchQueryStatus({ status: RequestStatus.IN_PROGRESS }));
     try {
       const data = await getCourseLaunch({
-        courseId, gradedOnly, validateOras, all,
+        courseId,
+        gradedOnly,
+        validateOras,
+        all,
       });
       dispatch(fetchStatusBarSelfPacedSuccess({ isSelfPaced: data.isSelfPaced }));
       dispatch(fetchStatusBarChecklistSuccess(getCourseLaunchChecklist(data)));
