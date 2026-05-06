@@ -65,6 +65,70 @@ const messages = defineMessages({
     id: 'course-authoring.tag-list.rename-tag',
     defaultMessage: 'Rename',
   },
+  confirmDeleteTitle: {
+    id: 'course-authoring.tag-list.confirm-delete-title',
+    defaultMessage: 'Delete "{tagName}"',
+  },
+  typeToConfirmDeleteOneTag: {
+    id: 'course-authoring.tag-list.delete-one-tag-type-to-confirm',
+    defaultMessage: 'DELETE',
+  },
+  deleteTagConfirmation: {
+    id: 'course-authoring.tag-list.delete-tag-confirmation',
+    defaultMessage: 'Warning! You are about to delete {count} tag(s).',
+  },
+  deleteLabelPlural: {
+    id: 'course-authoring.tag-list.delete-label',
+    defaultMessage: 'Delete Tags',
+  },
+  deleteLabelSingular: {
+    id: 'course-authoring.tag-list.delete-label-singular',
+    defaultMessage: 'Delete Tag',
+  },
+  cancelLabel: {
+    id: 'course-authoring.tag-list.cancel-label',
+    defaultMessage: 'Cancel',
+  },
+  typeToConfirmDeleteTagWithSubtags: {
+    id: 'course-authoring.tag-list.delete-tag-with-subtags-type-to-confirm',
+    defaultMessage: 'DELETE ALL {count} TAGS',
+  },
+  deleteTagWithSubtagsConfirmation: {
+    id: 'course-authoring.tag-list.delete-tag-with-subtags-confirmation',
+    defaultMessage: 'Warning! You are about to delete a tag containing sub-tags. If you proceed, {count} tags will be deleted.',
+  },
+  deleteTagConfirmationEmphasizedPart: {
+    id: 'course-authoring.tag-list.delete-tag-confirmation-bold-part',
+    defaultMessage: 'Any tags applied to course content will be removed across all assigned organizations.',
+  },
+  deleteTag: {
+    id: 'course-authoring.tag-list.delete-tag',
+    defaultMessage: 'Delete',
+  },
+  deleteTagDisabledTooltip: {
+    id: 'course-authoring.tag-list.delete-tag-disabled-tooltip',
+    defaultMessage: 'This tag does not allow deletion',
+  },
+  tagEditForbidden: {
+    id: 'course-authoring.tag-list.system-defined-tag-edit-disabled',
+    defaultMessage: 'Disabled because this is not allowed to be changed',
+  },
+  tagDeleteForbidden: {
+    id: 'course-authoring.tag-list.system-defined-tag-delete-disabled',
+    defaultMessage: 'Disabled because this is not allowed to be deleted',
+  },
+  hasOpenDraft: {
+    id: 'course-authoring.tag-list.has-open-draft',
+    defaultMessage: 'Disabled because tag creation or edit is in progress',
+  },
+  tagsDeleteSuccessMessage: {
+    id: 'course-authoring.tag-list.delete-success',
+    defaultMessage: '{count} tag(s) deleted. This change will be applied across all tagged content.',
+  },
+  tagDeleteErrorMessage: {
+    id: 'course-authoring.tag-list.delete-error',
+    defaultMessage: 'Error deleting tag: {errorMessage}',
+  },
 });
 
 export default messages;
